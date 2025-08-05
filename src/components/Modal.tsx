@@ -21,6 +21,7 @@ export default function Modal({ onAdd }: props) {
       onAdd(newtodo);
       setTitle("");
       setDescription("");
+     
     }
   };
   //3. Onchange text ให้เรียบร้อย

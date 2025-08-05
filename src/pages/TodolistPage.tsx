@@ -3,7 +3,7 @@ import TodoModal from "../components/Modal";
 import { type TaskCardProps } from "../libs/Todolist";
 import { useState } from "react";
 
-function App() {
+function App() { 
   const [tasks, setTasks] = useState<TaskCardProps[]>([
     {
       id: "1",
@@ -45,11 +45,13 @@ function App() {
     setTasks(newTasks);
   };
 
+  const doneLength = tasks.filter((task) => task.isDone).length;
+  
   return (
     <div className="col-12 m-2 p-0">
       <div className="container text-center">
         <h2>Todo List</h2>
-        <span className="m-2">All : () Done : ()</span>
+        <span className="m-2">All : ({tasks.length}) Done : ({doneLength})</span>
         {/* Modal Component */}
         <button
           type="button"
